@@ -21,7 +21,7 @@ public final class Log {
         if (msg == null) {
             return "";
         }
-        return String.format(msg.replace("{}", "%s"), args);
+        return String.format(msg.replace("%", "%%").replace("{}", "%s"), args);
     }
 
     public static void debug(@Nullable String message) {
